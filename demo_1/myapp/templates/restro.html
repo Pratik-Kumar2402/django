@@ -1,0 +1,25 @@
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
+<table style="width: 25%;">
+    <tr>
+        <th>name</th>
+        <th>cost</th>
+    </tr>
+    {% for items in menu %}
+    <tr>
+        <td>{{items.name}}</td>
+        {% if items.cost == 'free' %}
+        <td style="background-color: yellow;">{{items.cost}}</td>
+        {% else %}
+        <td>{{items.cost}}</td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>

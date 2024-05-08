@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting Cookie</title>
+</head>
+
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <label for="textbox1">Text Box 1:</label><br>
+        <input type="text" id="textbox1" name="textbox1"><br>
+        <label for="textbox2">Text Box 1:</label><br>
+        <input type="text" id="textbox2" name="textbox2"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

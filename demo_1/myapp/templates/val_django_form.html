@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate Django Form</title>
+    <style>
+        .errorlist{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="POST" novalidate>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Submit">
+        {% if submitted_details %}
+        <h2>The submitted details are:</h1>
+        <h4>Name: {{submitted_details.name}}</h4>
+        <h4>Email: {{submitted_details.email}}</h4>
+        <h4>Password: {{submitted_details.password}}</h4>
+        {% endif %}
+    </form>
+</body>
+</html>

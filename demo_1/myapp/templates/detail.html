@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock %}
+
+{% block css %}
+h2{
+    color: red;
+}
+table, th, td{
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 0.2rem;
+}
+tr:hover{
+    background-color: rgba(0,0,0,0.3);
+}
+a{
+    text-decoration: none;
+}
+{% endblock %}
+
+{% block content %}
+<h2>Food Page</h2>
+<p>Welcome to the Food Page</p>
+<a href="{% url 'food' %}">Go back</a>
+<table style="width: 25%; font-size: larger;">
+    <tr>
+        <th>Name</th>
+        <th>Cost</th>
+        <th>Details</th>
+    </tr>
+
+    {% if item %}
+    <tr>
+        <td>{{item.name}}</a></td>
+        <td>{{item.cost}}</td>
+        <td>{{item.details}}</td>
+    </tr>
+    {% endif %}
+
+</table>
+{% endblock %}

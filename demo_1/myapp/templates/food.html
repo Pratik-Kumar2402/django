@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock %}
+
+{% block css %}
+h2{
+    color: red;
+}
+table, th, td{
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 0.2rem;
+}
+tr:hover{
+    background-color: rgba(0,0,0,0.3);
+}
+a{
+    text-decoration: none;
+}
+{% endblock %}
+
+{% block content %}
+<h2>Food Page</h2>
+<p>Welcome to the Food Page</p>
+<table style="width: 25%; font-size: larger;">
+    <tr>
+        <th>Name</th>
+        <th>Cost</th>
+    </tr>
+    {% for item in items %}
+    <tr>
+        <!-- Here the item key is passed as the query parameter from the view function detail -->
+        <td><a href="{% url 'detail' item=item.name %}">{{item.name}}</a></td>
+        <td>{{item.cost}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
